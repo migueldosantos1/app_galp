@@ -1,6 +1,7 @@
 import 'package:app_galp/widgets/appbar_widget.dart';
 import 'package:app_galp/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'norma1_page.dart';
 import 'norma2_page.dart';
 import 'norma3_page.dart';
@@ -10,6 +11,16 @@ import 'norma6_page.dart';
 import 'norma7_page.dart';
 import 'norma8_page.dart';
 import 'norma9_page.dart';
+
+launchURL(String url) async{
+  final uri = Uri.parse(url);
+  if(await canLaunchUrl(uri)){
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  } 
+  else{
+    throw 'Could not launch $url';
+  }
+}
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -114,6 +125,31 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
+              ),
+            ),
+            SizedBox(height: 195), //! para resolver mais tarde
+            TextButton(
+              onPressed: () {
+                const url = 'https://sols.galp.com/GalpLifeSavingRules/TermosCondicoes_PT';
+
+                launchURL(url);
+              },
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.black,
+                padding: EdgeInsets.zero,
+                textStyle: TextStyle(
+                  fontFamily: 'CanaroBook',
+                  fontSize: 12,
+                  decoration: TextDecoration.underline, //? se der, remover a animação do botão (sombra)
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.info, color: Colors.black, size: 14),
+                  const SizedBox(width: 6),
+                  const Text('Termos e Condições'),
+                ],
               ),
             ),
           ],
