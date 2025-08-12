@@ -44,23 +44,36 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xFFFBD130),
       appBar: AppbarWidget(),
       bottomNavigationBar: NavbarWidget(),
-      body: Column(
-        children: [
-          SizedBox(height: 10),
-          Text(
-            'Galp Life Saving Rules',
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-          ),
-          Text(
-            'Clique no ícone da regra de segurança que pretende consultar',
-            style: TextStyle(fontSize: 16),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 16),
-          Expanded(
-            child: GridView.count(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              'Galp Life Saving Rules',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'CanaroBook',
+              ),
+            ),
+            SizedBox(height: 14),
+            Text(
+              'Clique no ícone da regra de \n segurança que pretende consultar',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontFamily: 'CanaroBook',
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 16),
+            GridView.count(
               crossAxisCount: 3,
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.only(left: 50, right: 50),
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: List.generate(iconPaths.length, (index) {
                 return GestureDetector(
                   onTap: () {
@@ -73,24 +86,39 @@ class HomePage extends StatelessWidget {
                   },
                   child: CircleAvatar(
                     backgroundColor: Colors.blue,
-                    radius: 40,
-                    child: Image.asset(iconPaths[index], fit: BoxFit.cover),
+                    radius: 35,
+                    child: Image.asset(
+                      iconPaths[index],
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 );
               }),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFa551F),
-              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+            SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFFa551F),
+                padding: EdgeInsets.symmetric(horizontal: 50),
+                minimumSize: Size(40, 25),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              child: Text(
+                'Iniciar Quiz',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'CanaroBook',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
             ),
-            child: Text('Iniciar Quiz'),
-          ),
-          SizedBox(height: 16),
-        ],
-      ),
+          ],
+        ),
+      )
     );
   }
 }

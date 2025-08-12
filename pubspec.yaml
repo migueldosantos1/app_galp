@@ -27,3 +27,7 @@ flutter:
     - family: VerdanaPro
       fonts:
         - asset: assets/fonts/verdana.ttf
+
+    - family: CanaroBook
+      fonts:
+        - asset: assets/fonts/Canaro-Book.ttf
