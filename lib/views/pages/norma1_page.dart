@@ -12,19 +12,9 @@ class Norma1Page extends StatelessWidget {
       imagePath: 'assets/images/norma1.png',
       title: 'Obtenha autorização antes de inibir \n ou desabilitar controles de segurança',
       videoUrl: 'https://youtu.be/1E6LFRNpfIA?si=EmYqc6zoW2_g_qJZ',
-      rules: [
-        RuleItem(
-          text: 'Eu conheço e uso equipamentos críticos de segurança...',
-        ),
-        RuleItem(
-          text: 'Desabilitar ou inibir equipamentos de segurança',
-        ),
-        RuleItem(
-          text: 'Divergir de procedimentos',
-        ),
-        RuleItem(
-          text: 'Ultrapassar uma barreira de segurança',
-        ),
+      cards: const [
+        "Eu conheço e uso equipamentos críticos de segurança e procedimentos que se aplicam à minha tarefa.",
+        "Eu obtenho autorização antes de: \n - Desabilitar ou inibir equipamentos de segurança; \n - Divergir de procedimentos; \n - Ultrapassar uma barreira de segurança.",
       ],
     );
   }

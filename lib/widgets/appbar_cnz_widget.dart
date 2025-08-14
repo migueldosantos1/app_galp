@@ -20,7 +20,7 @@ class AppbarCNZWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
           const Spacer(),
           PopupMenuButton<String>(
-            icon: const Icon(Icons.language, color: Colors.black),
+            icon: const Icon(Icons.language, color: Color(0xFFFBD130)),
             onSelected: (value) {
               print("Selected language: $value");
             },

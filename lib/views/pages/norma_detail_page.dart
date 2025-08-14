@@ -1,3 +1,4 @@
+import 'package:app_galp/widgets/rule_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:app_galp/widgets/appbar_cnz_widget.dart';
@@ -10,7 +11,7 @@ class NormaDetailPage extends StatefulWidget {
   final String title;
   final String name;
   final String videoUrl;
-  final List<RuleItem> rules;
+  final List<String> cards;
 
   const NormaDetailPage({
     super.key,
@@ -19,7 +20,7 @@ class NormaDetailPage extends StatefulWidget {
     required this.title,
     required this.name,
     required this.videoUrl,
-    required this.rules,
+    required this.cards,
   });
 
   @override
@@ -82,19 +83,12 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
             ),
             const SizedBox(height: 16),
 
-            Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  children: widget.rules
-                      .map((rule) => ListTile(
-                            title: Text(rule.text),
-                          ))
-                      .toList(),
-                ),
-              ),
+            Column(
+              children: widget.cards.map((cardText) {
+                return RuleCard(text: cardText);
+              }).toList(),
             ),
+
             const SizedBox(height: 16),
 
             YoutubePlayer(
