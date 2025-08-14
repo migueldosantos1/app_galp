@@ -2,6 +2,7 @@ import 'package:app_galp/widgets/appbar_widget.dart';
 import 'package:app_galp/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:app_galp/widgets/hero_widget.dart';
 import 'norma1_page.dart';
 import 'norma2_page.dart';
 import 'norma3_page.dart';
@@ -96,10 +97,11 @@ class HomePage extends StatelessWidget {
                     }
                   },
                   child: CircleAvatar(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color(0xFFFBD130),
                     radius: 35,
-                    child: Image.asset(
-                      iconPaths[index],
+                    child: HeroWidget(
+                      heroTag: 'ruleImage_$index',
+                      imagePath: iconPaths[index],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -140,7 +142,7 @@ class HomePage extends StatelessWidget {
                 textStyle: TextStyle(
                   fontFamily: 'CanaroBook',
                   fontSize: 12,
-                  decoration: TextDecoration.underline, //? se der, remover a animação do botão (sombra)
+                  decoration: TextDecoration.underline, //? remover a animação do botão (sombra)
                 ),
               ),
               child: Row(
