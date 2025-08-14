@@ -8,6 +8,7 @@ class NormaDetailPage extends StatefulWidget {
   final String heroTag;
   final String imagePath;
   final String title;
+  final String name;
   final String videoUrl;
   final List<RuleItem> rules;
 
@@ -16,6 +17,7 @@ class NormaDetailPage extends StatefulWidget {
     required this.heroTag,
     required this.imagePath,
     required this.title,
+    required this.name,
     required this.videoUrl,
     required this.rules,
   });
@@ -48,6 +50,17 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              widget.name,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'CanaroBook',
+              ),
+            ),
+            const SizedBox(height: 16),
+
             HeroWidget(
               heroTag: widget.heroTag,
               imagePath: widget.imagePath,
@@ -61,8 +74,10 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
               widget.title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 18,
+                color: Colors.white,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'CanaroBook',
               ),
             ),
             const SizedBox(height: 16),
@@ -74,7 +89,6 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
                 child: Column(
                   children: widget.rules
                       .map((rule) => ListTile(
-                            leading: Icon(rule.icon, color: rule.iconColor),
                             title: Text(rule.text),
                           ))
                       .toList(),
@@ -95,13 +109,9 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
 }
 
 class RuleItem {
-  final IconData icon;
-  final Color iconColor;
   final String text;
 
   RuleItem({
-    required this.icon,
-    required this.iconColor,
     required this.text,
   });
 }
