@@ -20,6 +20,11 @@ class AppbarCNZWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
           const Spacer(),
           PopupMenuButton<String>(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                    Radius.circular(20.0),
+                ),
+            ),
             icon: const Icon(Icons.language, color: Color(0xFFFBD130)),
             onSelected: (value) {
               print("Selected language: $value");

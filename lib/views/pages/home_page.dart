@@ -1,3 +1,4 @@
+import 'package:app_galp/views/pages/quiz_page.dart';
 import 'package:app_galp/widgets/appbar_widget.dart';
 import 'package:app_galp/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
@@ -59,26 +60,25 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 28),
             Text(
-              'Galp Life Saving Rules',
+              'Galp',
               style: TextStyle(
-                fontSize: 26,
+                color: Color(0xFFFa551F),
+                fontSize: 44,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'CanaroBook',
               ),
             ),
-            SizedBox(height: 14),
             Text(
-              'Clique no ícone da regra de \n segurança que pretende consultar',
+              'Life Saving Rules',
               style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontFamily: 'CanaroBook',
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'CanaroBook',
               ),
-              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 34),
             GridView.count(
               crossAxisCount: 3,
               padding: EdgeInsets.only(left: 50, right: 50),
@@ -110,7 +110,12 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const QuizPage()),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFFa551F),
                 padding: EdgeInsets.symmetric(horizontal: 50),
@@ -129,7 +134,18 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 195), //! para resolver mais tarde
+            SizedBox(height: 14),
+            Text(
+              'Clique no ícone da regra de \n segurança que pretende consultar',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.black,
+                fontFamily: 'CanaroBook',
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 95), //! para resolver mais tarde
             TextButton(
               onPressed: () {
                 const url = 'https://sols.galp.com/GalpLifeSavingRules/TermosCondicoes_PT';

@@ -10,8 +10,14 @@ class RuleCard extends StatelessWidget {
     final bulletPoints = text.split('\n').map((e) => e.trim()).toList();
 
     return Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      color: Color(0xFFFBD130),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: const BorderSide(
+          color: Colors.black,
+          width: 1.5,
+        ),
+      ),
       margin: const EdgeInsets.symmetric(vertical: 8),
       elevation: 3,
       child: Container(

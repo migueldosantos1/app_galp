@@ -20,6 +20,11 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
           const Spacer(),
           PopupMenuButton<String>(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                    Radius.circular(20.0),
+                ),
+            ),
             icon: const Icon(Icons.language, color: Colors.black),
             onSelected: (value) {
               print("Selected language: $value");
