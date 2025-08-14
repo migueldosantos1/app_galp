@@ -55,7 +55,7 @@ class _NormaDetailPageState extends State<NormaDetailPage> {
               widget.name,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'CanaroBook',
               ),

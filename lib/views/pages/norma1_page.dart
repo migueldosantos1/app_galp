@@ -8,7 +8,7 @@ class Norma1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return NormaDetailPage(
       heroTag: 'ruleImage_0', /*começa no zero por serem índices*/
-      name: 'By-pass controlos de segurança',
+      name: 'By-pass Controlos de Segurança',
       imagePath: 'assets/images/norma1.png',
       title: 'Obtenha autorização antes de inibir \n ou desabilitar controles de segurança',
       videoUrl: 'https://youtu.be/1E6LFRNpfIA?si=EmYqc6zoW2_g_qJZ',

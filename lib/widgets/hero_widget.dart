@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//! só tenho animação quando dou pop à página... alterar para ter nos dois sentidos
+
 class HeroWidget extends StatelessWidget {
   final String heroTag;
   final String imagePath;
