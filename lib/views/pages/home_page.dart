@@ -1,4 +1,4 @@
-import 'package:app_galp/views/pages/quiz_page.dart';
+import 'package:app_galp/views/pages/quiz1_page.dart';
 import 'package:app_galp/widgets/appbar_widget.dart';
 import 'package:app_galp/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +113,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const QuizPage()),
+                  MaterialPageRoute(builder: (context) => const QuizPage1()),
                 );
               },
               style: ElevatedButton.styleFrom(
